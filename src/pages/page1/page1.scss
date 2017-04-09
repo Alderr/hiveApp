@@ -1,0 +1,25 @@
+page-page1 {
+
+  ion-item {
+    font-family: monospace;
+  }
+  .button {
+
+    border-width: 5px;
+    font-family: monospace;
+  }
+
+  .button.showcase {
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 5px;
+
+    font-family: monospace;
+    text-transform: uppercase;
+  }
+
+  .testing {
+    position: fixed;
+    bottom: 15%;
+  }
+}

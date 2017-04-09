@@ -1,0 +1,12 @@
+<ion-content scroll="false" padding>
+  <ion-row *ngFor="let saving of savings">
+    <ion-col width-100 style="text-align : center" >
+        <button style="text-align: center" ion-button color="dark" (click)="printYo(saving)" outline> {{ saving }} </button>
+    </ion-col>
+  </ion-row>
+
+  <div class="testing">
+    <button ion-button color="dark" (click)="simulate()" outline> Simulate </button>
+    <button ion-button color="dark" (click)="nextWeek()" outline> Week {{ weekNum }} </button>
+  </div>
+</ion-content>

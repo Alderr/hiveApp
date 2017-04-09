@@ -1,0 +1,15 @@
+<ion-header no-shadow no-border>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="logo">{{ pageTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content scroll="false">
+  <super-tabs [rootNavCtrl]="navCtrl" [selectedTabIndex]="0"  height="100%" tabsColor="light" toolbarColor="dark" sliderColor="light">
+    <super-tab [tabRoot]="page1" [title]="showTitles? 'Items' : ''" [icon]="showIcons? 'home': ''"></super-tab>
+    <super-tab [tabRoot]="page2" [title]="showTitles? 'Analyze' : ''" [icon]="showIcons? 'pin' : ''"></super-tab>
+    <!-- <super-tab [tabRoot]="page3" [title]="showTitles? 'Creators' : ''" [icon]="showIcons? 'heart' : ''"></super-tab> -->
+  </super-tabs>
+</ion-content>
