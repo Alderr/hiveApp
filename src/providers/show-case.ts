@@ -23,11 +23,13 @@ export class ShowCase {
 
   page1Week2 : any;
   page1Week3 : any;
+  page2Only : any;
 
   sample : any;
 
   constructor(public http: Http) {
 
+//---------------------------------
     //call http and have set them already.
     this.http.get('https://fancy-gray.glitch.me/weekTwo').map(res => res.json()).subscribe(data => {
      this.page1Week2 = data;
@@ -38,6 +40,12 @@ export class ShowCase {
     this.page1Week3 = data;
     console.log(this.page1Week3);
   });
+
+  this.http.get('https://fancy-gray.glitch.me/filter').map(res => res.json()).subscribe(data => {
+      this.page2Only = data;
+      console.log(this.page2Only);
+    });
+//---------------------------------
     console.log('Hello ShowCase Provider');
   }
 
@@ -51,8 +59,8 @@ export class ShowCase {
     }
   }
 
-  sendDataSlide2(num : number) {
-
+  sendDataSlide2() {
+    return this.page2Only;
   }
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import {AlertController} from 'ionic-angular';
 import { ShowCase } from '../../providers/show-case';
 
 /*
@@ -20,7 +20,7 @@ export class Page2Page {
   savings : any;
   weekNum : number;
 
-  constructor(public navCtrl: NavController, public showCase : ShowCase) {
+  constructor(public navCtrl: NavController, public showCase : ShowCase, private alertController: AlertController) {
 
     this.savings = [
       "You Missed Out On 6$",
@@ -34,11 +34,14 @@ export class Page2Page {
 
   }
 
-  printYo(savings) {
-    console.log("Babe");
-    console.log(savings);
-
-  }
+  openFilters() {
+         let alert = this.alertController.create({
+                   title: 'Example',
+                   subTitle: "Example subtitle",
+                   buttons: ['OK']
+                 });
+                 alert.present();
+         }
 
   nextWeek(){
     //UNCOMMENT WHEN BRINGING API
@@ -58,7 +61,7 @@ export class Page2Page {
   }
 
   simulate(){
-
+    this.openFilters();
   }
 
 
